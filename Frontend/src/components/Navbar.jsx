@@ -70,19 +70,17 @@ const Navbar = () => {
         />
 
         <div className="group relative">
-          <Link to="/login">
-            <img
-              onClick={() => (token ? null : navigate("/"))}
-              src={assets.profile_icon}
-              className="w-5 cursor-pointer z-10"
-              alt=""
-            />
-          </Link>
+          <img
+            onClick={() => navigate(token ? "/profile" : "/login")}
+            src={assets.profile_icon}
+            className="w-5 cursor-pointer z-10"
+            alt=""
+          />
           {/* Dropdown Menu */}
           {token && (
             <div className="hidden group-hover:block absolute right-0 pt-4 pointer-events-none group-hover:pointer-events-auto">
               <div className="flex flex-col gap-2 w-36 py-3 px-6 bg-slate-100 text-gray-500 rounded">
-                <p className="cursor-pointer hover:text-black">My Profile</p>
+                <p onClick={() => navigate('/profile')} className="cursor-pointer hover:text-black">My Profile</p>
                 <p onClick={()=>navigate("/orders")} className="cursor-pointer hover:text-black">Orders</p>
                 <p onClick={logout} className="cursor-pointer hover:text-black">
                   Logout

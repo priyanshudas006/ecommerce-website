@@ -8,7 +8,8 @@ import Contact from "./pages/Contact";
 import Product from "./pages/Product"; 
 import Cart from "./pages/Cart";
 import Login from "./pages/Login"
-import Placeorder from "./pages/Placeorder";
+import Profile from "./pages/Profile";
+import Placeorder from "./pages/PlaceOrder";
 import Order from "./pages/Order";
 import LatestCollection from "./components/LatestCollection";
 import Footer from "./components/Footer";
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/cart" element={<Cart />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/profile" element={<Profile />}/>
         <Route path="/orders" element={<Order />}/>
         <Route path="/place-order" element={<Placeorder />}/>
       </Routes>

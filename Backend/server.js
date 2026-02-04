@@ -1,13 +1,13 @@
+import 'dotenv/config';
 import express from "express";
 import cors from "cors";
 import connectDB from "./config/mongodb.js";
-import dotenv from "dotenv";
 import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./routes/userRoutes.js";
 import productRouter from "./routes/productRoutes.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-dotenv.config();
+
 
 // App config
 const app = express();

@@ -1,11 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [currentState, setCurrentState] = useState("Login");
-  const { setToken, navigate, backendUrl } = useContext(ShopContext);
+
+  const { setToken, backendUrl } = useContext(ShopContext);
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -46,7 +49,6 @@ const Login = () => {
       toast.error(error.response?.data?.message || error.message);
     }
   };
-
 
   return (
     <div>

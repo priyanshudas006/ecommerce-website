@@ -113,4 +113,15 @@ const adminLogin = async (req, res) => {
   }
 };
 
-export { loginUser, registerUser, adminLogin };
+const getProfile = async (req, res) => {
+  try {
+    const userId = req.userId;
+    const user = await userModel.findById(userId).select("name email");
+    if (!user) return res.status(404).json({ success: false, message: "User not found" });
+    res.json({ success: true, user });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export { loginUser, registerUser, adminLogin, getProfile };
