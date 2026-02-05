@@ -30,9 +30,11 @@ const Collection = () => {
 
   const applyFilter = () => {
     let productsCopy = products.slice();
-    
-    if(showSearch && search){
-      productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+
+    if (showSearch && search) {
+      productsCopy = productsCopy.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
     }
 
     if (category.length > 0) {
@@ -71,7 +73,7 @@ const Collection = () => {
 
   useEffect(() => {
     sortProduct();
-  }, [sortType]);
+  }, [sortType, filterProducts]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
