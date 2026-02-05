@@ -51,8 +51,7 @@ const Collection = () => {
   };
 
   const sortProduct = () => {
-    
-    const fillterProductCopy = products.slice();
+    let fillterProductCopy = filterProducts.slice();
 
     switch (sortType) {
       case "low-high":
