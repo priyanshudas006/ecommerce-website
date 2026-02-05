@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import Titel from "../components/Titel";
-import ProductItem from "../components/productItem";
+import productItem from "../components/productItem";
 
 const Collection = () => {
   const { products, search, showSearch } = useContext(ShopContext);
@@ -192,7 +192,7 @@ const Collection = () => {
         {/* Map Products */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
           {filterProducts.map((item) => (
-            <ProductItem
+            <productItem
               key={item._id}
               id={item._id}
               name={item.name}
